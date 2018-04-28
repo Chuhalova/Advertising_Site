@@ -15,6 +15,9 @@ class CreateAdvertisementCategoriesTable extends Migration
     {
         Schema::create('advertisement_categories', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('category');
+            $table->integer('parent_id')->unsigned()->nullable();
+            $table->foreign('parent_id')->references('id')->on('advertisement_categories');
             $table->timestamps();
         });
     }
