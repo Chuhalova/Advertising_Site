@@ -24,3 +24,4 @@ Route::get('advertisements/{id}/edit', 'AdvertisementController@edit')->middlewa
 Route::patch('/advertisements/{id}', 'AdvertisementController@update')->middleware('roles:User');
 Route::delete('/advimages/{id}', 'AdvertisementController@destroyImage')->middleware('roles:User');
 Route::patch('/adv/{id}', 'AdvertisementController@updateOnImg')->middleware('roles:User');
+Route::get('/advertisements/{id}','AdvertisementController@show')->middleware('roles:User');

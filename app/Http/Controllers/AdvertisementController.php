@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Http\Requests\AdvertisementRequest;
 use App\Advertisement;
@@ -102,7 +101,20 @@ class AdvertisementController extends Controller
     }
     public function show($id)
     {
-
+        $activeUser = Auth::user()->id;
+        $showedAdv = Advertisement::find($id);
+        if(!isset($showedAdv)){
+            abort(402);
+        }
+        else{
+            $advCreator = $showedAdv->user_id;
+            if($activeUser == $advCreator){
+                return view('/advertisements/show')->with('adv', $showedAdv);
+            }
+            else{
+                abort(401);
+            }
+        }
     }
     public function destroyImage($id){
         $advimage = AdvImage::find($id);
