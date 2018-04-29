@@ -1,4 +1,7 @@
 <?php
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('home');
 });
@@ -17,3 +20,7 @@ Route::get('/categories/{parent}', function(\Illuminate\Http\Request $request, \
 Route::get('advertisements', 'AdvertisementController@index');
 Route::get('advertisements/create', 'AdvertisementController@create')->middleware('roles:User');
 Route::post('advertisements', 'AdvertisementController@store')->middleware('roles:User');
+Route::get('advertisements/{id}/edit', 'AdvertisementController@edit')->middleware('roles:User');
+Route::patch('/advertisements/{id}', 'AdvertisementController@update')->middleware('roles:User');
+Route::delete('/advimages/{id}', 'AdvertisementController@destroyImage')->middleware('roles:User');
+Route::patch('/adv/{id}', 'AdvertisementController@updateOnImg')->middleware('roles:User');

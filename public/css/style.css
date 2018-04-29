@@ -75,7 +75,6 @@
     opacity: 0;
     -webkit-transition: top 0.2s ease, opacity 0.2s ease-in;
     -moz-transition: top 0.2s ease, opacity 0.2s ease-in;
-    -ms-transition: top 0.2s ease, opacity 0.2s ease-in;
     -o-transition: top 0.2s ease, opacity 0.2s ease-in;
     transition: top 0.2s ease, opacity 0.2s ease-in;
 }
@@ -203,7 +202,6 @@
         padding: 18px 25px 18px 25px;
         text-transform: uppercase;
         letter-spacing: 1px;
-        background: url('images/bg.png');
         cursor: pointer;
     }
     #cssmenu ul ul,
@@ -268,11 +266,11 @@
 }
 
 #button_icon_user{
-    background-image: url('../user_icon.png');
+    background-image: url('../images/user_icon.png');
 }
 
 #button_icon_admin{
-    background-image: url('../admin_icon.png');
+    background-image: url('../images/admin_icon.png');
 }
 
 .profile_avatar_displaying{
@@ -300,15 +298,84 @@
 }
 
 .blue_text_min{
-    font-style: 10pt;
+    font-size:10pt;
 }
 
 .blue_text_max{
     font-size: 20pt;
     background-color: rgba(255, 255, 255, 0.7);
 }
+
+#errors{
+    padding: 0!important;
+    font-size: 10pt;
+}
+
+#errors>li{
+    list-style: circle;
+    color: #cc0012;
+    font-weight: bold;
+}
+
+.img_edit{
+    line-height:250px;
+    text-align: center;
+}
+
+.img_edit>img{
+    max-width: 250px;
+    max-height:250px;
+}
+
+.inner_img{
+}
+
+
+#errors_container{
+    margin:0!important;
+    padding: 0!important;
+    border: none!important;
+}
+
 @media (max-width:990px){
+    #errors{
+        padding: 0!important;
+        font-size: 8pt;
+    }
+
     .button_icon_who{
         display: none;
+    }
+
+    #create_top_p5>.p-5{
+        padding: 0!important;
+
+    }
+    #create_top_wrapper>.content-wrapper{
+        padding: 20px 0!important;
+    }
+    #create_top_p5{
+        margin-left:20px!important;
+    }
+
+    .blue_label{
+        font-size: 10pt!important;
+    }
+
+    .blue_text_min{
+        font-size: 8pt!important;
+    }
+
+    .blue_text_max{
+        font-size: 12pt;
+    }
+    #create_adv>.form-group>.col-form-label,#create_adv>.form-group>.form-control{
+        padding-top:2px;
+        padding-bottom: 2px;
+        font-size: 10pt;
+    }
+
+    #create_adv>.mr-2{
+        padding:10px!important;
     }
 }
