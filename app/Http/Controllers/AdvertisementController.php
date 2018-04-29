@@ -103,13 +103,17 @@ class AdvertisementController extends Controller
     {
         $activeUser = Auth::user()->id;
         $showedAdv = Advertisement::find($id);
+        $images = AdvImage::whereAdvertisement_id($id)->get();
         if(!isset($showedAdv)){
             abort(402);
         }
         else{
             $advCreator = $showedAdv->user_id;
             if($activeUser == $advCreator){
-                return view('/advertisements/show')->with('adv', $showedAdv);
+                return View::make('advertisements.show', [
+                    'advertisement' => $showedAdv,
+                    'images' => $images,
+                ]);
             }
             else{
                 abort(401);
