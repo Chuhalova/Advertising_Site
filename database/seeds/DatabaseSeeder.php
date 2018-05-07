@@ -344,5 +344,227 @@ class DatabaseSeeder extends Seeder
         $category_electro_individ -> id = 55;
         $category_electro_individ -> category = 'Техніка для особистих потреб';
         $category_electro_individ ->save();
+
+        $adv = new \App\Advertisement();
+        $adv -> id = 1;
+        $adv -> title = 'Джинси';
+        $adv -> description = 'Джинси на дівчинку 10 років';
+        $adv -> price = '200';
+        $adv -> status = 'active';
+        $adv -> condition = 'б/у';
+        $adv -> category_id = 2;
+        $adv -> created_at = '2018-05-06 14:10:38';
+        $adv -> user_id = 2;
+        $adv -> save();
+
+        $advImg1 = new \App\AdvImage();
+        $advImg1 -> id = 1;
+        $advImg1 -> image = 'public/images/vHGsMaDyqLrfwYGQR7A0xeX4fnXE7U9VXb3iV6jx.jpeg';
+        $advImg1 -> advertisement_id = 1;
+        $advImg1 -> save();
+
+        $advImg91 = new \App\AdvImage();
+        $advImg91 -> id = 91;
+        $advImg91 -> image = 'public/images/rT4sSmxRfV1oeompIv35yP10argYBW7UDN5ivY4v.jpeg';
+        $advImg91 -> advertisement_id = 1;
+        $advImg91 -> save();
+
+        $adv2 = new \App\Advertisement();
+        $adv2 -> id = 2;
+        $adv2 -> title = 'Гольфик';
+        $adv2 -> description = 'Гарний гольфик на хлопчика 2 роки. Голубого кольору.';
+        $adv2 -> price = '100';
+        $adv2 -> status = 'active';
+        $adv2 -> condition = 'б/у';
+        $adv2 -> category_id = 2;
+        $adv2 -> created_at = '2018-05-06 14:10:38';
+        $adv2 -> user_id = 2;
+        $adv2 -> save();
+
+        $advImg12 = new \App\AdvImage();
+        $advImg12 -> id = 2;
+        $advImg12 -> image = 'public/images/L7lFdY33pyJhZed2YyZco3sBZOuZhM5l4VHYmH3D.jpeg';
+        $advImg12 -> advertisement_id = 2;
+        $advImg12 -> save();
+
+        $adv3 = new \App\Advertisement();
+        $adv3 -> id = 3;
+        $adv3 -> title = 'Meizu M3 Note ';
+        $adv3 -> description = 'Новий  телефон, купувався в березні.';
+        $adv3 -> price = '1666';
+        $adv3 -> status = 'active';
+        $adv3 -> condition = 'б/у';
+        $adv3 -> category_id = 47;
+        $adv3 -> created_at = '2018-05-06 14:10:38';
+        $adv3 -> user_id = 2;
+        $adv3 -> save();
+
+        $adv4 = new \App\Advertisement();
+        $adv4 -> id = 4;
+        $adv4 -> title = 'Apple Iphone 5';
+        $adv4 -> description = 'Старий, але в гарному стані.';
+        $adv4 -> price = '2000';
+        $adv4 -> status = 'active';
+        $adv4 -> condition = 'б/у';
+        $adv4 -> category_id = 47;
+        $adv4 -> created_at = '2018-05-06 14:10:38';
+        $adv4 -> user_id = 2;
+        $adv4 -> save();
+
+        $advImg14 = new \App\AdvImage();
+        $advImg14 -> id = 4;
+        $advImg14 -> image = 'public/images/dOSdt2juU0SBHhyXordPK74t8sFR1vH8ZXv2Anai.jpeg';
+        $advImg14 -> advertisement_id = 4;
+        $advImg14 -> save();
+
+        $adv5 = new \App\Advertisement();
+        $adv5 -> id = 5;
+        $adv5 -> title = 'Автобус вольцваген';
+        $adv5 -> description = 'Автобус у гарному стані';
+        $adv5 -> price = '700000';
+        $adv5 -> status = 'active';
+        $adv5 -> condition = 'б/у';
+        $adv5 -> category_id = 19;
+        $adv5 -> created_at = '2018-05-06 14:10:38';
+        $adv5 -> user_id = 2;
+        $adv5 -> save();
+
+        $advImg15 = new \App\AdvImage();
+        $advImg15 -> id = 5;
+        $advImg15 -> image = 'public/images/U2tDyB2gksDJ7eiAAV7yrEd18dILlJHlANqRrdx8.jpeg';
+        $advImg15 -> advertisement_id = 5;
+        $advImg15 -> save();
+
+        $advImg95 = new \App\AdvImage();
+        $advImg95 -> id = 95;
+        $advImg95 -> image = 'public/images/xNdXa3eD3AaLuZN2pHO1acDm8ivrhfUhtLg5aRkf.jpeg';
+        $advImg95 -> advertisement_id = 5;
+        $advImg95 -> save();
+
+        $advImg55 = new \App\AdvImage();
+        $advImg55 -> id = 55;
+        $advImg55 -> image = 'public/images/fPYr0ablpjhj9baAGv1StouNlgQZ8xxD8G1K31PJ.jpeg';
+        $advImg55 -> advertisement_id = 5;
+        $advImg55 -> save();
+
+        $adv6 = new \App\Advertisement();
+        $adv6 -> id = 6;
+        $adv6 -> title = 'Кімната в гуртожитку';
+        $adv6 -> description = 'Кімната в гуртожитку.В блоці дівчат. Тільки для однієї дівчини.';
+        $adv6 -> price = '1000';
+        $adv6 -> status = 'active';
+        $adv6 -> condition = 'новий';
+        $adv6 -> category_id = 10;
+        $adv6 -> created_at = '2018-05-06 14:10:38';
+        $adv6 -> user_id = 2;
+        $adv6 -> save();
+
+        $advImg16 = new \App\AdvImage();
+        $advImg16 -> id = 6;
+        $advImg16 -> image = 'public/images/c4OCvpkugwlo3l1l8HGHAmJiBgo0CM7fDiitYoAN.jpeg';
+        $advImg16 -> advertisement_id = 6;
+        $advImg16 -> save();
+
+        $adv7 = new \App\Advertisement();
+        $adv7 -> id = 7;
+        $adv7 -> title = 'Ділянка в Бучі';
+        $adv7 -> description = 'Земельна діянка під забудівлю будиночка . Площа 50 квадратних метрів';
+        $adv7 -> price = '500000';
+        $adv7 -> status = 'active';
+        $adv7 -> condition = 'новий';
+        $adv7 -> category_id = 15;
+        $adv7 -> created_at = '2018-05-06 14:10:38';
+        $adv7 -> user_id = 2;
+        $adv7 -> save();
+
+        $adv8 = new \App\Advertisement();
+        $adv8 -> id = 8;
+        $adv8 -> title = 'Бальні туфельки';
+        $adv8 -> description = 'Туфлі для бальних танців - 38 розміру';
+        $adv8 -> price = '300';
+        $adv8 -> status = 'active';
+        $adv8 -> condition = 'новий';
+        $adv8 -> category_id = 25;
+        $adv8 -> created_at = '2018-05-06 14:10:38';
+        $adv8 -> user_id = 2;
+        $adv8 -> save();
+
+        $advImg18 = new \App\AdvImage();
+        $advImg18 -> id = 8;
+        $advImg18 -> image = 'public/images/dkx83jwpKIKebFJkigd84v5whsWn1nVoVqqbQ8VW.jpeg';
+        $advImg18 -> advertisement_id = 8;
+        $advImg18 -> save();
+
+        $adv9 = new \App\Advertisement();
+        $adv9 -> id = 9;
+        $adv9 -> title = 'Модель машинки';
+        $adv9 -> description = 'Модель машинки';
+        $adv9 -> price = '1000';
+        $adv9 -> status = 'active';
+        $adv9 -> condition = 'новий';
+        $adv9 -> category_id = 26;
+        $adv9 -> created_at = '2018-05-06 14:10:38';
+        $adv9 -> user_id = 2;
+        $adv9 -> save();
+
+        $advImg19 = new \App\AdvImage();
+        $advImg19 -> id = 9;
+        $advImg19 -> image = 'public/images/QnpEFgsh9T0AmwCHsOx2URz3Sorf20nPnSQuV9mG.jpeg';
+        $advImg19 -> advertisement_id = 9;
+        $advImg19 -> save();
+
+        $advImg98 = new \App\AdvImage();
+        $advImg98 -> id = 98;
+        $advImg98 -> image = 'public/images/wovvTtObjK3Qi3Q2r7CWIQO3x6tSwu84qcMI5GlU.jpeg';
+        $advImg98 -> advertisement_id = 9;
+        $advImg98 -> save();
+
+        $advImg97 = new \App\AdvImage();
+        $advImg97 -> id = 97;
+        $advImg97 -> image = 'public/images/COXt8U6mRzL5M1YnlmZotyIWJAEfoGCpaKvsiIiv.jpeg';
+        $advImg97 -> advertisement_id = 9;
+        $advImg97 -> save();
+
+        $adv10 = new \App\Advertisement();
+        $adv10 -> id = 10;
+        $adv10 -> title = 'Лопата для снігу';
+        $adv10 -> description = 'Велика лопата для снігу. Ручка - деерво , низ - пластик.';
+        $adv10 -> price = '100';
+        $adv10 -> status = 'active';
+        $adv10 -> condition = 'новий';
+        $adv10 -> category_id = 39;
+        $adv10 -> created_at = '2018-05-06 14:10:38';
+        $adv10 -> user_id = 2;
+        $adv10 -> save();
+
+        $advImg10 = new \App\AdvImage();
+        $advImg10 -> id = 10;
+        $advImg10 -> image = 'public/images/5vUvCMtvvmzSdhqvin2bOdQ3NHSGW44fy5TqWFo7.jpeg';
+        $advImg10 -> advertisement_id = 10;
+        $advImg10 -> save();
+
+        $advImg99 = new \App\AdvImage();
+        $advImg99 -> id = 99;
+        $advImg99 -> image = 'public/images/dfiMIgveGWXaLfe4gPGW2Y6mpeZDAmg8vXtLnjDX.jpeg';
+        $advImg99 -> advertisement_id = 10;
+        $advImg99 -> save();
+
+        $adv11 = new \App\Advertisement();
+        $adv11 -> id = 11;
+        $adv11 -> title = 'Черпак';
+        $adv11 -> description = 'Посудина для кухні - черпак металічний - великий';
+        $adv11 -> price = '20';
+        $adv11 -> status = 'active';
+        $adv11 -> condition = 'новий';
+        $adv11 -> category_id = 44;
+        $adv11 -> created_at = '2018-05-06 14:10:38';
+        $adv11 -> user_id = 2;
+        $adv11 -> save();
+
+        $advImg11 = new \App\AdvImage();
+        $advImg11 -> id = 11;
+        $advImg11 -> image = 'public/images/fFZbTY6FKyEMi3oC4JgRPgkzhW3R66WrboV8Ijsp.jpeg';
+        $advImg11 -> advertisement_id = 11;
+        $advImg11 -> save();
     }
 }

@@ -11,12 +11,6 @@ use Illuminate\Support\Facades\View;
 
 class AdvertisementController extends Controller
 {
-    public function messages()
-    {
-        return [
-            'category_id.required' => 'Вибір категорії є обовязковим',
-        ];
-    }
     public function index()
     {
     }
@@ -111,8 +105,8 @@ class AdvertisementController extends Controller
             $advCreator = $showedAdv->user_id;
             if($activeUser == $advCreator){
                 return View::make('advertisements.show', [
-                    'advertisement' => $showedAdv,
-                    'images' => $images,
+                        'advertisement' => $showedAdv,
+                        'images' => $images,
                 ]);
             }
             else{

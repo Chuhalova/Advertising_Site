@@ -2,11 +2,9 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeAdvertisementController@index')->name('home');
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeAdvertisementController@index')->name('home');
 Route::get('profile', 'ProfileController@index')->middleware('roles:Moderator,User');
 Route::put('profile','ProfileController@updateAvatar')->middleware('roles:Moderator,User');
 Route::get('/categories', function(\Illuminate\Http\Request $request) {
@@ -24,4 +22,11 @@ Route::get('advertisements/{id}/edit', 'AdvertisementController@edit')->middlewa
 Route::patch('/advertisements/{id}', 'AdvertisementController@update')->middleware('roles:User');
 Route::delete('/advimages/{id}', 'AdvertisementController@destroyImage')->middleware('roles:User');
 Route::patch('/adv/{id}', 'AdvertisementController@updateOnImg')->middleware('roles:User');
-Route::get('/advertisements/{id}','AdvertisementController@show')->middleware('roles:User');
+Route::get('/advertisements/{id}','AdvertisementController@show');
+Route::get('/admin_advertisement/active', 'AdminAdvertisementController@indexActive')->middleware('roles:Moderator')->name('admin_advertisement_active');
+Route::get('/admin_advertisement/inactive', 'AdminAdvertisementController@indexInactive')->middleware('roles:Moderator')->name('admin_advertisement_inactive');
+Route::patch('/admin_advertisement/inactive/{id}', 'AdminAdvertisementController@makeActive')->middleware('roles:Moderator');
+Route::delete('/admin_advertisement/inactive/{id}', 'AdminAdvertisementController@destroyAdv')->middleware('roles:Moderator');
+Route::delete('/admin_advertisement/active/{id}', 'AdminAdvertisementController@destroyAdvAct')->middleware('roles:Moderator');
+
+Route::get('/filtrate', 'HomeAdvertisementController@filtrate')->name('filtrate');

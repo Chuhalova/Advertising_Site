@@ -34,7 +34,8 @@
            </li>
          @else
            <li><a href="{{ route('home') }}">{{ __('Усі') }}</a></li>
-           <li><a href="{{ route('home') }}">{{ __('Неактивовані') }}</a></li>
+           <li><a href="{{ route('admin_advertisement_inactive') }}">{{ __('Неактивовані') }}</a></li>
+           <li><a href="{{ route('admin_advertisement_active') }}">{{ __('Активовані') }}</a></li>
            <li>
              <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                {{ __('Вийти') }}
@@ -47,7 +48,7 @@
         @endguest
       </ul>
     </div>
-    <main style='padding: none !important;'>
+    <main style='padding:0!important;'>
       @yield('content')
     </main>
   </div>
