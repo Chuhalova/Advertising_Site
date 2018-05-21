@@ -32,7 +32,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="wrapper_top_w3layouts">
 
         <div class="header_agileits">
-            <div class="logo inner_page_log">
+            <div class="logo">
                 <h1><a class="navbar-brand" href="/home"><span>Твоя</span><i></i>дошка<i></i></a></h1>
             </div>
             @auth
@@ -40,60 +40,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>
                 <nav>
                     <ul>
-                        <li><a href="/home" class="active">Головна</a></li>
-                        <li><a href="/profile">Профіль</a></li>
-                        @if(\Illuminate\Support\Facades\Auth::user()->hasRole('User'))
-                            <li><a href="/advertisements/create">Створити оголошення</a></li>
-                            <li><a href="/advertisements/activeUserAdv">Мої активні оголошення</a></li>
-                            <li><a href="/advertisements/inactiveUserAdv">Мої неактивні оголошення</a></li>
-                        @else
-                            <li>
-                                <a href="/admin_advertisement/active">Активні оголошення</a>
-                            </li>
-                            <li>
-                                <a href="/admin_advertisement/inactive">Неактивні оголошення</a>
-                            </li>
-                        @endif
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="404.html">Team</a></li>
+                        <li><a href="shop.html">Shop Now</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="mobile-nav-button">
-                <button id="trigger-overlay" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                <button  style='height:36px' id="trigger-overlay" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
             </div>
-        @endauth
-        <!-- cart details -->
+            @endauth
             <div class="clearfix"></div>
         </div>
         <!-- /slider -->
         <div class="slider">
             <div class="callbacks_container">
                 @if(count($images) != 0 && count($images) <4)
-                    <ul class="rslides callbacks callbacks1" id="slider4">
-                        <li id="callbacks1_s0" class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 1000ms ease-in-out;">
-                            <div class="banner-top2" style="background: url({{URL::to(Storage::url($images[0]->image))}}) no-repeat 0px 0px;background-size:cover;">
-                                <div class="banner-info-wthree">
-                                </div>
+                <ul class="rslides callbacks callbacks1" id="slider4">
+                    <li id="callbacks1_s0" class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 1000ms ease-in-out;">
+                        <div class="banner-top2" style="background: url({{URL::to(Storage::url($images[0]->image))}}) no-repeat 0px 0px;background-size:cover;">
+                            <div class="banner-info-wthree">
                             </div>
-                        </li>
-                        @if(count($images)>1)
-                            <li id="callbacks1_s1" class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 1000ms ease-in-out;">
-                                <div style="background: url({{URL::to(Storage::url($images[1]->image))}}) no-repeat 0px 0px;background-size:cover;" class="banner-top3">
-                                    <div class="banner-info-wthree">
-                                    </div>
+                        </div>
+                    </li>
+                    @if(count($images)>1)
+                    <li id="callbacks1_s1" class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 1000ms ease-in-out;">
+                        <div style="background: url({{URL::to(Storage::url($images[1]->image))}}) no-repeat 0px 0px;background-size:cover;" class="banner-top3">
+                            <div class="banner-info-wthree">
+                            </div>
 
-                                </div>
-                            </li>
-                        @endif
-                        @if(count($images)>2)
-                            <li id="callbacks1_s2" class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 1000ms ease-in-out;">
-                                <div style="background: url({{URL::to(Storage::url($images[2]->image))}}) no-repeat 0px 0px;background-size:cover;" class="banner-top">
-                                    <div class="banner-info-wthree">
-                                    </div>
+                        </div>
+                    </li>
+                    @endif
+                    @if(count($images)>2)
+                    <li id="callbacks1_s2" class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 1000ms ease-in-out;">
+                        <div style="background: url({{URL::to(Storage::url($images[2]->image))}}) no-repeat 0px 0px;background-size:cover;" class="banner-top">
+                            <div class="banner-info-wthree">
+                            </div>
 
-                                </div>
-                            </li>
-                        @endif
-                    </ul>
+                        </div>
+                    </li>
+                    @endif
+                </ul>
                 @endif
             </div>
             <div class="clearfix"> </div>
@@ -101,38 +91,76 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </div>
 <div class="mid_services">
-    <div class="col-md-6 according_inner_grids">
+    <div class="col-md-6 col-lg-6 according_inner_grids">
         <h3 class="heading two">{{$adv->title}}</h3>
         <div class="according_info">
             <div class="panel-group about_panel" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="headingOne">
                         <h4 class="panel-title asd">
-                              Опис товару
+                            Опис товару
                         </h4>
                     </div>
                     <div>
-                            {{$adv->description}}
-                    </div>
+                        {{$adv->description}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<div class="col-md-6 mid_services_img">
-    <div class="bar-grids">
-        <h3 class="heading two three">Параметри товару</h3>
-        <div class="skill_info">
-            <h3 class="heading one" style="color:#fff">Вартість - <span>{{$adv->price}}UAH</span></h3>
-            <h3 class="heading one" style="color:#fff">Стан - <span>{{$adv->condition}}</span></h3>
+</div>
+    <div class="col-md-6 col-lg-6 mid_services_img">
+        <div class="bar-grids">
+            <h3 class="heading two three">Параметри товару</h3>
+            <div class="skill_info">
+                <h3 class="heading one" style="color:#fff">Вартість - <span>{{$adv->price}}UAH</span></h3>
+                <h3 class="heading one" style="color:#fff">Стан - <span>{{$adv->condition}}</span></h3>
+            </div>
         </div>
     </div>
-</div>
-<div class="clearfix"></div>
+<div class="clearfix"> </div>
+    <div class="col-md-6 col-lg-6 mid_services_img">
+        <div class="bar-grids">
+            <div class="col-md-12 contact-left">
+                <h3 class="heading two three">Контактна інформація</h3>
+                <div class="contact-cont">
+                    <span class="fa fa-envelope" aria-hidden="true"></span>
+                    <div class="skill_info">
+                        <h4 class="heading one" style="color:#fff">Mail продавця</h4>
+                        <h5 class="heading one" style="color:#fff">{{$creator->email}}</h5>
+                    </div>
+                    {{--<div class="clearfix"></div>--}}
+                </div>
+                <div class="contact-cont">
+                    <span  class="fa fa-phone" aria-hidden="true"></span>
+                    <div  class="skill_info">
+                        <h4 class="heading one" style="color:#fff">Телефон продавця</h4>
+                        <h5 class="heading one" style="color:#fff">{{$creator->phone}}</h5>
+                    </div>
+                    {{--<div class="clearfix"></div>--}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-6">
+        @if(($creator->avatar)=='')
+            <div class="avatar_img">
+                <img src="{{asset('assets2/images/empty.png')}}"  width="100" height="100" />
+            </div>
+        @else
+            <div class="avatar_img">
+                <img src="{{ URL::to($creator_url)}}" width="100" height="100" />
+            </div>
+        @endif
+        <div  class="avatar_img">
+            <h4 class="heading one" style="color:#000">{{$creator->surname . ' ' . $creator->name}}</h4>
+        </div>
+    </div>
+    <div class="clearfix"> </div>
 <!-- footer -->
-<div class="footer_agileinfo_w3">
-    <p class="copy-right-w3ls-agileits">© 2018 Твоя дошка. Створено Чухаловою Веронікою. </p>
-</div>
+    <div class="footer_agileinfo_w3">
+         <p class="copy-right-w3ls-agileits">© 2018 Твоя дошка. Створено Чухаловою Веронікою. </p>
+    </div>
 
 <!-- //footer -->
 <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>

@@ -16,7 +16,7 @@
                     <!-- product-sec1 -->
                     <div class="product-sec1">
                         <!--/mens-->
-                        @foreach($inactiveAdv as $adv)
+                        @foreach($activeAdv as $adv)
                             <div  class="col-md-4 product-men">
                                 <div class="product-shoe-info shoe">
                                     <div class="men-pro-item">
@@ -26,13 +26,13 @@
                                             @endif
                                             <div class="men-cart-pro">
                                                 <div class="inner-men-cart-pro">
-                                                    <a href="{{ URL::to('/show/' . $adv->id) }}" class="link-product-add-cart">Детальніше</a>
+                                                    <a href="{{ URL::to('/showForUser/' . $adv->id) }}" class="link-product-add-cart">Детальніше</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="item-info-product">
                                             <h4>
-                                                <a href="{{ URL::to('/show/' . $adv->id) }}">{{$adv->title}}</a>
+                                                <a href="{{ URL::to('/showForUser/' . $adv->id) }}">{{$adv->title}}</a>
                                             </h4>
                                             <div class="info-product-price">
                                                 <div class="grid_meta">
@@ -44,12 +44,8 @@
                                                 </div>
                                             </div>
                                             <div class="info-product-price">
-                                                <form id="activate" method="POST" action="{{ url('/admin_advertisement/inactive/'. $adv->id )  }}">
-                                                    {{method_field('PATCH')}}
-                                                    {{ csrf_field() }}
-                                                    <button type="submit" class="btn btn-success">Активувати</button>
-                                                </form>
-                                                <form id="deatroyAdvAdm" action="{{ url('/admin_advertisement/inactive/'.$adv->id) }}" method="POST" style="display: inline">
+                                                    <a href = '{{URL::to('/advertisements/'. $adv->id . '/edit')}}' type="submit" class="btn btn-success">Змінити</a>
+                                                <form id="destroyAdv" action="{{ url('/advertisements/'.$adv->id) }}" method="POST" style="display: inline">
                                                     {{method_field('DELETE')}}
                                                     @csrf
                                                     <button type="submit" class="btn btn-danger" >Видалити</button>
@@ -62,7 +58,7 @@
                             </div>
                         @endforeach
                         <div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center;margin: auto;">
-                            {!! $inactiveAdv->links()!!}
+                            {!! $activeAdv->links()!!}
                         </div>
                     </div>
                     <div class="clearfix"></div>

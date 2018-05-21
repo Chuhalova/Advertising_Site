@@ -566,5 +566,169 @@ class DatabaseSeeder extends Seeder
         $advImg11 -> image = 'public/images/fFZbTY6FKyEMi3oC4JgRPgkzhW3R66WrboV8Ijsp.jpeg';
         $advImg11 -> advertisement_id = 11;
         $advImg11 -> save();
+
+        $adv12 = new \App\Advertisement();
+        $adv12 -> id = 188;
+        $adv12 -> title = 'НОВИНКА!Модный купальник. Слитный купальник. Хит 2018';
+        $adv12 -> description = 'Абсолютно новый купальник. Качество на высоте !Стильный молодежный купальник. Хорошо пошит, красиво сидит на Фигуре !Для Вашего удобства, у нас есть услуга ПРИМЕРКИ в г.Киев ( максимум 5 купальников за 1 раз ) Размер S M Посадка(талия)- Тип рисунка	принт Застежка	- нет Бретели-  Плавки- слип Чашка-Тип- цельный купальник';
+        $adv12 -> price = '200';
+        $adv12 -> status = 'inactive';
+        $adv12 -> condition = 'новий';
+        $adv12 -> category_id = 34;
+        $adv12 -> created_at = '2018-05-06 14:10:38';
+        $adv12 -> user_id = 2;
+        $adv12 -> save();
+
+        $advImg12 = new \App\AdvImage();
+        $advImg12 -> id = 188;
+        $advImg12 -> image = 'public/images/xdr2Q7n3UJHY1o9yHDXwdjDKqj2Ns9pSSoUMvpZo.jpeg';
+        $advImg12 -> advertisement_id = 188 ;
+        $advImg12 -> save();
+
+        $advImg12a = new \App\AdvImage();
+        $advImg12a -> id = 187;
+        $advImg12a -> image = 'public/images/7ENQScxRChAWmg61GS4VNgGjesfHctJD3Zxl0UfD.jpeg';
+        $advImg12a -> advertisement_id = 188 ;
+        $advImg12a -> save();
+
+        $adv13 = new \App\Advertisement();
+        $adv13 -> id = 187;
+        $adv13 -> title = 'Прополісні цукерки Прополисные конфеты леденцы';
+        $adv13 -> description ='Прополісні цукерки це лікувальні льодяники зроблені дбайливими руками з любов’ю Прополіс володіє потужною протизапальною дією і підвищує імунітет.  Давайте щодня дитині до школи прополісну цукерку – імунітет буде захищеним. Щоденне вживання прополісних цукерок це не лише потужна підтримка імунітету у боротьбі з вірусними інфекційними захворюваннями, але й смаковинка.  Прополіс починає свою активну дію в роті, де бореться з інфекціями порожнини рота і глотки, не допускаючи подальшого розповсюдження інфекції, при коватанні і перетравленні триває бактерицидну дію прополісу.  Ваші діти не люблять ковтати пігулки і випльовують ліки?  Просто поставте на стіл коробочку з нашими прополісними цукерками і Ви побачите, як навіть найменші дітки самі потягнуться до них ручки і отримують від ніжної карамелі не тільки задоволення, а й захист свого здоров’я.';
+        $adv13 -> price = '3';
+        $adv13 -> status = 'inactive';
+        $adv13 -> condition = 'новий';
+        $adv13 -> created_at = '2018-05-06 14:10:38';
+        $adv13 -> user_id = 2;
+        $adv13 -> save();
+
+        $advImg13a = new \App\AdvImage();
+        $advImg13a -> id = 186;
+        $advImg13a -> image = 'public/images/Y2s9K8YbthKBNEgQreK0exqBWfbbOOTapgwZVjH4.jpeg';
+        $advImg13a -> advertisement_id = 187;
+        $advImg13a -> save();
+
+        $adv14 = new \App\Advertisement();
+        $adv14 -> id = 186;
+        $adv14 -> title = '- 21%Дубове ліжко Трансформер';
+        $adv14 -> description ='Ліжко Трансформер від фірми Кемпас!З 13.03 по 25.05 діє акція ліжко з дуба по ціні бука!Ціна вказана за обидва спальних місця без матраців!';
+        $adv14 -> price = '3460';
+        $adv14 -> status = 'inactive';
+        $adv14 -> condition = 'новий';
+        $adv14 -> created_at = '2018-05-06 14:10:38';
+        $adv14 -> user_id = 2;
+        $adv14 -> category_id = 40;
+        $adv14 -> save();
+
+        $adv15 = new \App\Advertisement();
+        $adv15 -> id = 185;
+        $adv15 -> title = 'Кросівки бігові Asics';
+        $adv15 -> description ='Бігові кросівки. Також підійдуть для залу. Чудова амортизація. Легкі. Ідеальні для тренувань.';
+        $adv15 -> price = '750';
+        $adv15 -> status = 'inactive';
+        $adv15 -> condition = 'новий';
+        $adv15 -> created_at = '2018-05-06 14:10:38';
+        $adv15 -> user_id = 2;
+        $adv15 -> category_id = 36;
+        $adv15 -> save();
+
+        $adv16 = new \App\Advertisement();
+        $adv16 -> id = 184;
+        $adv16 -> title = 'ЗНАХІДКА Manhattan супер стійкі блиски для губ';
+        $adv16 -> description ='Manhattan Lip2Last це яскравий колір та суперова стійкість на цілий день! Багато оглядів та відгуків в Інтернеті ! Ви забудете на весь день про підкрашування губ! ';
+        $adv16 -> price = '100';
+        $adv16 -> status = 'inactive';
+        $adv16 -> condition = 'новий';
+        $adv16 -> created_at = '2018-05-06 14:10:38';
+        $adv16 -> user_id = 2;
+        $adv16 -> save();
+
+        $adv19 = new \App\Advertisement();
+        $adv19 -> id = 183;
+        $adv19 -> title = 'Кукла пупс' ;
+        $adv19 -> description ='Каждая, уважающая себя, маленькая мама должна иметь свою собственную дочку, которую можно кормить, укладывать спать и просто весело играть.на ходит на горшок и писает в подгузник.А еще она кушает кашку и пьет из бутылочки, которую ей предложит любимая мамочка. Ручки и лицо куколки изготовлены из мягкого винила. В наборе малышка найдет кроме Валюши бутылочку, мисочку для кашки, соску, ложку и питание. Еще в комплекте есть ванночка, мочалку для купания и горшок. Кукла-пупс Валюша понравится девочкам от 3 лет.';
+        $adv19 -> price = '550';
+        $adv19 -> status = 'inactive';
+        $adv19 -> condition = 'новий';
+        $adv19 -> created_at = '2018-05-06 14:10:38';
+        $adv19 -> user_id = 2;
+        $adv19 -> category_id = 5;
+        $adv19 -> save();
+
+
+        $adv18 = new \App\Advertisement();
+        $adv18 -> id = 182;
+        $adv18 -> title = 'Кубик - Рубика';
+        $adv18 -> description ='Кубик Рубика стандартный';
+        $adv18 -> price = '50';
+        $adv18 -> status = 'inactive';
+        $adv18 -> condition = 'новий';
+        $adv18 -> created_at = '2018-05-06 14:10:38';
+        $adv18 -> user_id = 2;
+        $adv18 -> category_id = 5;
+        $adv18 -> save();
+
+        $adv17 = new \App\Advertisement();
+        $adv17 -> id = 181;
+        $adv17 -> title = 'Туфлі Лодочки "Classic" Турція';
+        $adv17 -> description ='Матеріал ЕкоЗамша Каблук 10,5 Колір чорний Брала собі невгадала з розміром=(  Дуже класні Підійдуть на 39 розмір';
+        $adv17 -> price = '340';
+        $adv17 -> status = 'inactive';
+        $adv17 -> condition = 'новий';
+        $adv17 -> created_at = '2018-05-06 14:10:38';
+        $adv17 -> user_id = 2;
+        $adv17 -> category_id = 36;
+        $adv17 -> save();
+
+        $advImg17a = new \App\AdvImage();
+        $advImg17a -> id = 181;
+        $advImg17a -> image = 'public/images/xUdtuezjvIPTKfg3yeC2uANpWEd5rRm8TqqfLOr6.jpeg';
+        $advImg17a -> advertisement_id = 181;
+        $advImg17a -> save();
+
+        $advImg17 = new \App\AdvImage();
+        $advImg17 -> id = 180;
+        $advImg17 -> image = 'public/images/jTC7pvty5gWJ7s3k4oSLEFFM2zKUjWOWCEm07O7G.jpeg';
+        $advImg17 -> advertisement_id = 181;
+        $advImg17 -> save();
+
+        $advImg18 = new \App\AdvImage();
+        $advImg18 -> id = 179;
+        $advImg18 -> image = 'public/images/T2hjGZbmGGdFMyTu79LXDGYlBI8eA0n32QJL9fXv.jpeg';
+        $advImg18 -> advertisement_id = 182;
+        $advImg18 -> save();
+
+        $advImg19 = new \App\AdvImage();
+        $advImg19 -> id = 178;
+        $advImg19 -> image = 'public/images/YmQ3NDSUmdiU0bCLwdBlqIOpUaZlhny1lbzftR8n.jpeg';
+        $advImg19 -> advertisement_id = 183;
+        $advImg19 -> save();
+
+
+        $advImg120 = new \App\AdvImage();
+        $advImg120-> id = 177;
+        $advImg120 -> image = 'public/images/nGfjkZGJCX4NuMqQXYqzXPV74j7vZjEuwXpq3ZSJ.jpeg';
+        $advImg120 -> advertisement_id = 184;
+        $advImg120 -> save();
+
+        $advImg121 = new \App\AdvImage();
+        $advImg121 -> id = 176;
+        $advImg121 -> image = 'public/images/jkGB0aDdulMp2CB7a74JkiXmybh1Vd2rSVb6mSqx.jpeg';
+        $advImg121 -> advertisement_id = 185;
+        $advImg121 -> save();
+
+        $advImg121a = new \App\AdvImage();
+        $advImg121a -> id = 175;
+        $advImg121a -> image = 'public/images/9RE8JSL2IbmtEJqC9C8mNRq797E1mGXIBrk038ir.jpeg';
+        $advImg121a -> advertisement_id = 185;
+        $advImg121a -> save();
+
+        $advImg122 = new \App\AdvImage();
+        $advImg122 -> id = 174;
+        $advImg122 -> image = 'public/images/Tx1i3YFTvcNwoTK8XVDbFa5NUDQjKY4JP9rebM9o.jpeg';
+        $advImg122 -> advertisement_id = 186;
+        $advImg122 -> save();
+
+
     }
 }

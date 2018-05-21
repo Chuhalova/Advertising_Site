@@ -16,7 +16,7 @@ class CreateAdvertisementTable extends Migration
         Schema::create('advertisement', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('description');
+            $table->text('description');
             $table->enum('condition',['б/у', 'новий']);
             $table->enum('status',['active','inactive'])->default('inactive');
             $table->integer('price');

@@ -1,3 +1,44 @@
+.item-info-product{
+    height:150px;
+}
+.my_img_adder{
+    text-align: center;
+    vertical-align: middle;
+    height:250px;
+    padding: 100px;
+}
+
+.btn-prof, .my_img_adder>button{
+    background: #0c0c0c;
+    padding: 0.7em 1.5em;
+    display: inline-block;
+    color: #FFF;
+    text-decoration: none;
+    margin: 2em 0 1em 0;
+    outline:none;
+    border:none;
+}
+
+.my_img_adder>button{
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    background-color: #fff;
+    background-image: url("../images/pict.png");
+    background-size: cover;
+    width:60px;
+    height:60px;
+}
+
+#profile_avatar_container>div{
+    text-align: center;
+}
+
+.button-icon-who{
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+}
 #cssmenu,
 #cssmenu ul,
 #cssmenu ul li,
@@ -463,6 +504,15 @@
     display:inline-block;
     margin:20px 0 0 0;
 }
+
+.filtr_cont{
+    margin: 5px auto;
+}
+
+.filtr_cont>input[type='submit']{
+    margin-top: 20px!important;
+}
+
 
 @media (max-width: 550px) {
     #oops_par{

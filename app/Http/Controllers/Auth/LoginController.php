@@ -3,6 +3,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+
 class LoginController extends Controller
 {
     use AuthenticatesUsers {
@@ -18,6 +20,6 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         $this->performLogout($request);
-        return redirect()->route('login');
+        return Redirect::to('/');
     }
 }

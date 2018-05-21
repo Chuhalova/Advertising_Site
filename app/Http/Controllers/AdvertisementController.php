@@ -4,6 +4,7 @@ use App\Http\Requests\AdvertisementRequest;
 use App\Advertisement;
 use App\AdvImage;
 use App\Http\Requests\AdvimageRequest;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
@@ -11,8 +12,17 @@ use Illuminate\Support\Facades\View;
 
 class AdvertisementController extends Controller
 {
-    public function index()
+    public function indexActive()
     {
+        $user = Auth::user()->id;
+        $activeAdv = Advertisement::with(['category', 'user' ,'advimages'])->whereStatus('active')->whereUserId($user)->orderBy('created_at', 'desc')->paginate(6);
+        return view('/advertisements/activeUserAdv')-> with(compact('activeAdv'));
+    }
+    public function indexInactive()
+    {
+        $user = Auth::user()->id;
+        $activeAdv = Advertisement::with(['category', 'user' ,'advimages'])->whereStatus('inactive')->whereUserId($user)->orderBy('created_at', 'desc')->paginate(6);
+        return view('/advertisements/activeUserAdv')-> with(compact('activeAdv'));
     }
     public function create()
     {
@@ -76,7 +86,7 @@ class AdvertisementController extends Controller
                 $advertisement->price =$request->price;
                 $advertisement->condition=$request->condition;
                 $advertisement->save();
-                return Redirect::to('/advertisements/' . $id . '/edit');
+                return Redirect::to('/showForUser/' . $id);
             }
         }
         else{
@@ -91,27 +101,42 @@ class AdvertisementController extends Controller
             'advertisement_id' => $id,
             'image' => $filename
         ]);
+        $advertisement = Advertisement::find($id);
+        $advertisement->status = 'inactive';
         return Redirect::to('/advertisements/'. $id. '/edit');
     }
-    public function show($id)
+
+    public function showForAll($id)
     {
-        $activeUser = Auth::user()->id;
+        $showedAdv = Advertisement::find($id);
+        $images = AdvImage::whereAdvertisement_id($id)->get();
+        $creator = User::whereId($showedAdv->user_id)->first();
+        $url = Storage::url($creator->avatar);
+        if(!isset($showedAdv)){
+            abort(402);
+        }
+        else{
+                return View::make('advertisements.showForAll', [
+                    'adv' => $showedAdv,
+                    'images' => $images,
+                    'creator' => $creator,
+                    'creator_url' =>$url,
+                ]);
+        }
+    }
+
+    public function showForUser($id)
+    {
         $showedAdv = Advertisement::find($id);
         $images = AdvImage::whereAdvertisement_id($id)->get();
         if(!isset($showedAdv)){
             abort(402);
         }
         else{
-            $advCreator = $showedAdv->user_id;
-            if($activeUser == $advCreator){
-                return View::make('advertisements.show', [
-                        'advertisement' => $showedAdv,
-                        'images' => $images,
-                ]);
-            }
-            else{
-                abort(401);
-            }
+            return View::make('advertisements.show', [
+                'adv' => $showedAdv,
+                'images' => $images
+            ]);
         }
     }
     public function destroyImage($id){
@@ -125,5 +150,18 @@ class AdvertisementController extends Controller
             $advimage->delete();
             return Redirect::to('/advertisements/' . $page . '/edit');
         }
+    }
+
+    public function destroyAdv($id){
+            $adv= Advertisement::find($id);
+            if(isset($adv) && $adv->user_id == Auth::user()->id){
+                $images = $adv->advimages;
+                foreach ($images as $image){
+                    Storage::delete($image->image);
+                    $image->delete();
+                }
+                $adv->delete();
+                return Redirect::back();
+            }
     }
 }
